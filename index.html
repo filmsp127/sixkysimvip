@@ -261,6 +261,19 @@
         font-size: 14px;
       }
 
+      .phone-contact {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s;
+      }
+
+      .phone-contact:hover {
+        color: #ffd700;
+      }
+
       .line-contact {
         background: #00b900;
         color: white;
@@ -660,13 +673,15 @@
           <span>SIXKYSIMVIP</span>
         </div>
         <div class="contact-info">
-          <span><i class="fas fa-phone"></i> 095-615-6395</span>
+          <a href="https://lin.ee/hZ8NBa1" class="phone-contact" target="_blank">
+            <i class="fas fa-phone"></i> 095-615-6395
+          </a>
           <a
-            href="https://line.me/ti/p/sixkysimvip"
+            href="https://lin.ee/hZ8NBa1"
             class="line-contact"
             target="_blank"
           >
-            <i class="fab fa-line"></i> LINE: sixkysimvip
+            <i class="fab fa-line"></i> LINE: @simvip
           </a>
         </div>
       </div>
@@ -753,8 +768,8 @@
       <div class="container">
         <p>&copy; 2024 SIXKYSIMVIP - เบอร์มงคล เบอร์สวย เบอร์ตอง เบอร์โฟร์</p>
         <div class="social-links">
-          <a href="https://line.me/ti/p/sixkysimvip" target="_blank">
-            <i class="fab fa-line"></i> LINE: sixkysimvip
+          <a href="https://lin.ee/hZ8NBa1" target="_blank">
+            <i class="fab fa-line"></i> LINE: @simvip
           </a>
         </div>
       </div>
@@ -763,7 +778,7 @@
     <!-- Floating Contact Button -->
     <div class="contact-float">
       <a
-        href="https://line.me/ti/p/sixkysimvip"
+        href="https://lin.ee/hZ8NBa1"
         class="contact-float-btn"
         target="_blank"
       >
@@ -1031,9 +1046,7 @@
       function contactNumber(number) {
         const message = `สนใจเบอร์ ${number} ครับ`;
         window.open(
-          `https://line.me/ti/p/sixkysimvip?text=${encodeURIComponent(
-            message
-          )}`,
+          `https://lin.ee/hZ8NBa1`,
           "_blank"
         );
       }
