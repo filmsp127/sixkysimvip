@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คู่มือใช้งานระบบบัญชีธุรกิจ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .link-box {
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 15px 25px;
+            margin: 20px auto 0;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .link-box code {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .link-box a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .link-box:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+        
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title .icon {
+            font-size: 28px;
+        }
+        
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .step-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 auto 15px;
+            font-size: 18px;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .step-desc {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-name {
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .tips-box {
+            background: #fef3c7;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid #fbbf24;
+        }
+        
+        .tips-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tips-box ul {
+            list-style: none;
+            color: #92400e;
+        }
+        
+        .tips-box li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .tips-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .contact-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.2);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .contact-item .label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .contact-item .value {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            margin: 20px auto;
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .step-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 ระบบบัญชีธุรกิจ</h1>
+            <p class="subtitle">จัดการรายรับรายจ่าย คำนวณกำไรขาดทุนของธุรกิจ</p>
+            <div class="link-box">
+                <a href="https://fzkr8f-3000.csb.app" target="_blank">
+                    <code>🔗 https://fzkr8f-3000.csb.app</code>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Getting Started -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">🚀</span>
+                เริ่มต้นใช้งาน 3 ขั้นตอน
+            </h2>
+            <div class="step-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-title">สมัครสมาชิก</div>
+                    <div class="step-desc">
+                        ใช้ Email และรหัสผ่าน<br>
+                        ตั้ง Username ภาษาอังกฤษ<br>
+                        (a-z, 0-9, _ เท่านั้น)
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-title">ตั้งรหัส PIN</div>
+                    <div class="step-desc">
+                        สร้าง PIN 6 หลัก<br>
+                        สำหรับความปลอดภัย<br>
+                        จำให้ดี ใช้ทุกครั้ง!
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-title">เริ่มใช้งาน</div>
+                    <div class="step-desc">
+                        กดปุ่ม + เพิ่มรายการ<br>
+                        ดูรายงานแบบ Real-time<br>
+                        Export Excel/PDF ได้
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Features -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">⚡</span>
+                ฟีเจอร์หลัก
+            </h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">➕</div>
+                    <div class="feature-name">เพิ่มรายการ</div>
+                </div>
+                <div class="feature-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-name">ดูรายงาน</div>
+                </div>
+                <div class="feature-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-name">กราฟสถิติ</div>
+                </div>
+                <div class="feature-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="feature-icon">💾</div>
+                    <div class="feature-name">Export ข้อมูล</div>
+                </div>
+                <div class="feature-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="feature-icon">⭐</div>
+                    <div class="feature-name">รายการโปรด</div>
+                </div>
+                <div class="feature-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                    <div class="feature-icon">🌙</div>
+                    <div class="feature-name">Dark Mode</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Tips -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">💡</span>
+                เคล็ดลับการใช้งาน
+            </h2>
+            <div class="tips-box">
+                <h4>✨ ใช้งานให้เต็มประสิทธิภาพ</h4>
+                <ul>
+                    <li>กด ⭐ เพื่อบันทึกรายการที่ใช้บ่อย</li>
+                    <li>ตั้งเป้าหมายกำไรเพื่อติดตามผล</li>
+                    <li>ดูแท็บสถิติเพื่อวิเคราะห์ธุรกิจ</li>
+                    <li>Export รายงานทุกเดือนเก็บไว้</li>
+                    <li>ติดตั้งบนมือถือเหมือน App</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Mobile Install -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📱</span>
+                ติดตั้งบนมือถือ
+            </h2>
+            <div class="step-grid">
+                <div class="step-card">
+                    <div class="step-number">📱</div>
+                    <div class="step-title">iPhone</div>
+                    <div class="step-desc">
+                        เปิดใน Safari → กด Share<br>
+                        → Add to Home Screen
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">🤖</div>
+                    <div class="step-title">Android</div>
+                    <div class="step-desc">
+                        เปิดใน Chrome → กด ⋮<br>
+                        → Add to Home screen
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact -->
+        <div class="contact-section">
+            <h2 class="contact-title">💬 ติดต่อ Support</h2>
+            <div class="qr-code">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <rect width="512" height="512" fill="white"/>
+                    <path fill="#00C853" d="M64 64h128v128H64zm256 0h128v128H320zM64 320h128v128H64zm32-224h64v64H96zm256 0h64v64h-64zm-256 256h64v64H96zm160-256h32v32h-32zm64 0h32v32h-32zm-64 64h32v32h-32zm0 64h32v32h-32zm64-64h32v32h-32zm64 0h32v32h-32zm0 64h32v32h-32zm-64 0h32v32h-32zm-64 64h32v32h-32zm0 64h32v32h-32zm-64-64h32v32h-32zm128 0h32v32h-32zm64 0h32v32h-32zm64 0h32v32h-32zm0 64h32v32h-32zm-128 0h32v32h-32zm64 0h32v32h-32zm-192 64h32v32h-32zm64 0h32v32h-32zm64 0h32v32h-32zm64 0h32v32h-32zm64 0h32v32h-32zM64 256h32v32H64zm64 0h32v32h-32zm64 0h32v32h-32zm256 0h32v32h-32zm-192 64h32v32h-32zm128 0h32v32h-32zm-64 64h32v32h-32z"/>
+                    <text x="256" y="280" text-anchor="middle" fill="#00C853" font-family="Arial, sans-serif" font-size="48" font-weight="bold">LINE</text>
+                </svg>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="label">LINE Official</div>
+                    <div class="value">@social24</div>
+                </div>
+                <div class="contact-item">
+                    <div class="label">Email</div>
+                    <div class="value">filmbancha127@gmail.com</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>✨ ขอให้ใช้งานอย่างมีความสุข | Business Accounting System v1.0</p>
+        </div>
+    </div>
+</body>
+</html>
